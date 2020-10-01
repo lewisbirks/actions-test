@@ -2,4 +2,4 @@ ccd-config:
   - any: ['ccd-config/**/*']
 
 docmosis:
-  -any: ['docker/docmosis/templates/*']
+  - any: ['docker/docmosis/templates/*']
