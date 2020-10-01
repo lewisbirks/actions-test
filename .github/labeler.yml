@@ -1,0 +1,5 @@
+ccd-config:
+  ccd-config/**/*
+
+docmosis:
+  docker/docmosis/templates/*
