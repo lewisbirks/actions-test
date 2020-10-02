@@ -1,5 +1,5 @@
 ccd-config:
-  ccd-config/**/*
+  - any: ['ccd-config/**/*']
 
 docmosis:
-  docker/docmosis/templates/*
+  - any: ['docker/docmosis/templates/*']
