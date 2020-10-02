@@ -1,2 +1,2 @@
 # label-test
-test adding to and removing labels from prs automatically
+testing the [labeler](https://github.com/actions/labeler) action
