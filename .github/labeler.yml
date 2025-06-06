@@ -1,8 +1,0 @@
-ccd-config:
-  - any: ['ccd-config/**/*']
-
-docmosis:
-  - any: ['docker/docmosis/templates/*']
-
-github changes:
-  - any: ['.github/**/*']
