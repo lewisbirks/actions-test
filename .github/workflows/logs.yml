@@ -16,4 +16,5 @@ jobs:
           N=${{ inputs.iterations }}
           for i in $(seq 1 $N); do
             echo "hello, world $i!"
+            sleep 0.01
           done
