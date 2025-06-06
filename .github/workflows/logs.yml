@@ -7,14 +7,31 @@ on:
         default: 10
         required: false
         description: 'Number of iterations'
+      job_type:
+        type: choice
+        description: 'Select which job to run'
+        required: true
+        options:
+          - log
+          - large
+        default: 'log'
 
 jobs:
   log:
+    if: inputs.job_type == 'log'
     runs-on: ubuntu-latest
     steps:
       - run: |
-          N=${{ inputs.iterations }}
-          for i in $(seq 1 $N); do
+          for i in $(seq 1 ${{ inputs.iterations }}); do
             echo "hello, world $i!"
             sleep 0.01
+          done
+
+  large:
+    if: inputs.job_type == 'large'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for i in $(seq 1 ${{ inputs.iterations }}); do
+            head -c 1073741824 /dev/urandom | base64 --break=1000
           done
