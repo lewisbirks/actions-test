@@ -1,0 +1,19 @@
+name: logs.yml
+on:
+  workflow_dispatch:
+    inputs:
+      iterations:
+        type: number
+        default: 10
+        required: false
+        description: 'Number of iterations'
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          N=${{ inputs.iterations }}
+          for i in $(seq 1 $N); do
+            echo "hello, world $i!"
+          done
