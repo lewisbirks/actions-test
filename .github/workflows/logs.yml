@@ -26,12 +26,13 @@ jobs:
             echo "hello, world $i!"
             sleep 0.01
           done
+          echo "End of file"
 
   large:
     if: inputs.job_type == 'large'
     runs-on: ubuntu-latest
     steps:
       - run: |
-          for i in $(seq 1 ${{ inputs.iterations }}); do
+          for i in $(seq 1 5); do
             head -c 1073741824 /dev/urandom | base64 --wrap 1000
           done
