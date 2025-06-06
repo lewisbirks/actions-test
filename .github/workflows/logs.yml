@@ -33,5 +33,5 @@ jobs:
     steps:
       - run: |
           for i in $(seq 1 ${{ inputs.iterations }}); do
-            head -c 1073741824 /dev/urandom | base64 --break=1000
+            head -c 1073741824 /dev/urandom | base64 --wrap 1000
           done
